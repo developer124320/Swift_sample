@@ -15,6 +15,7 @@
 
 import UIKit
 import AWSDynamoDB
+import AWSCognitoIdentityProvider
 
 class DDBMainTableViewController: UITableViewController {
 
@@ -24,7 +25,10 @@ class DDBMainTableViewController: UITableViewController {
     var  doneLoading = false
 
     var needsToRefresh = false
-
+    
+    var user: AWSCognitoIdentityUser?
+    var pool: AWSCognitoIdentityUserPool?
+    var response: AWSCognitoIdentityUserGetDetailsResponse?
 //    @IBAction func unwindToMainTableViewControllerFromSearchViewController(_ unwindSegue:UIStoryboardSegue) {
 //        let searchVC = unwindSegue.source as! DDBSearchViewController
 //        self.tableRows?.removeAll(keepingCapacity: true)
@@ -222,8 +226,18 @@ class DDBMainTableViewController: UITableViewController {
 //
 //    }
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        self.pool = AWSCognitoIdentityUserPool(forKey: AWSCognitoUserPoolsSignInProviderKey)
+        if (self.user == nil) {
+            self.user = self.pool?.currentUser()
+        }
 
+        let myIdentityPoolId = "eu-west-1:702a39c2-a6a3-4c67-9174-3afaa4742694"
+        let credentialsProvider:AWSCognitoCredentialsProvider = AWSCognitoCredentialsProvider(regionType:AWSRegionType.EUWest1, identityPoolId: myIdentityPoolId)
+        let configuration = AWSServiceConfiguration(region:AWSRegionType.EUWest1, credentialsProvider:credentialsProvider)
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
+        
         tableRows = []
         lock = NSLock()
         
@@ -327,6 +341,14 @@ class DDBMainTableViewController: UITableViewController {
 
 
 
+    @IBAction func signout_clic(_ sender: Any) {
+        self.user?.signOut()
+//        self.title = nil
+        self.response = nil
+        //        self.tableView.reloadData()
+//        self.refresh()
+
+    }
 
     // MARK: - Navigation
 

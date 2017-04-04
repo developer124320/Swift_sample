@@ -23,8 +23,22 @@ class UserDetailViewViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var submit: UIButton!
-
+    @IBOutlet weak var btnChange: UIButton!
+    
     @IBAction func submit_click(_ sender: Any) {
+        if self.submit.currentTitle == "Update Profile"{
+            self.submit.setTitle("Submit",for: .normal)
+            self.btnChange.isEnabled = true
+            self.txtEmail.isEnabled = true
+            self.txtPhone.isEnabled = true
+            return
+        }
+        else{
+            self.submit.setTitle("Update Profile",for: .normal)
+            self.btnChange.isEnabled = false
+            self.txtEmail.isEnabled = false
+            self.txtPhone.isEnabled = false
+        }
         var attributes = [AWSCognitoIdentityUserAttributeType]()
         
         if let phoneValue = self.txtPhone.text, !phoneValue.isEmpty {
