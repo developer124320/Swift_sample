@@ -7,4 +7,5 @@ target ‘LoginAndView’ do
     pod 'AWSCore', '~> 2.5.0'
     pod 'AWSCognitoIdentityProvider', '~> 2.5.0'
     pod 'AWSDynamoDB', '~> 2.5.0'
+    pod 'AWSS3', '~> 2.5.0'
 end

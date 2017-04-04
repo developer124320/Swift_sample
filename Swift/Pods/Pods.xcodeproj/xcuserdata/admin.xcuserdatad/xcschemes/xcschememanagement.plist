@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AWSS3.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-LoginAndView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,17 +37,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3DBADDFB4A39A60FE3C04869E55DDE02</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>764BF5F8A7793010994AF3D12E8FB7BF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8C150105E74E47C2F77F40459B62247F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>90C2ACA98AA888A3E636AAB3CC854F4C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9F7098779713B711F6C591B62A41F242</key>
 		<dict>
 			<key>primary</key>
 			<true/>

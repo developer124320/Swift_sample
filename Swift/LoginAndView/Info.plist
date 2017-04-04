@@ -67,6 +67,8 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>YES</string>
 	<key>AWS</key>
 	<dict>
 		<key>CredentialsProvider</key>
@@ -76,9 +78,9 @@
 				<key>Default</key>
 				<dict>
 					<key>PoolId</key>
-					<string>us-east-1:10f44302-47a5-4e0e-8235-3cda5a1e11f2</string>
+					<string>eu-west-1:702a39c2-a6a3-4c67-9174-3afaa4742694</string>
 					<key>Region</key>
-					<string>USEast1</string>
+					<string>EUwest1</string>
 				</dict>
 			</dict>
 		</dict>
@@ -87,7 +89,7 @@
 			<key>Default</key>
 			<dict>
 				<key>Region</key>
-				<string>USEast1</string>
+				<string>EUwest1</string>
 			</dict>
 		</dict>
 		<key>DynamoDBObjectMapper</key>
@@ -95,7 +97,7 @@
 			<key>Default</key>
 			<dict>
 				<key>Region</key>
-				<string>USEast1</string>
+				<string>EUwest1</string>
 			</dict>
 		</dict>
 	</dict>

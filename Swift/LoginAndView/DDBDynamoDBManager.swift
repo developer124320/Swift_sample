@@ -16,7 +16,7 @@
 import Foundation
 import AWSDynamoDB
 
-let AWSSampleDynamoDBTableName = "Products"
+let AWSSampleDynamoDBTableName = "DynamoDB-OM-SwiftSample"
 
 class DDBDynamoDBManger : NSObject {
     class func describeTable() -> AWSTask<AnyObject> {
